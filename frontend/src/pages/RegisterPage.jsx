@@ -22,9 +22,8 @@ function RegisterPage() {
         const result = await registerUser(login, password);
 
         if (result.success && result.token) {
-            // After successful registration, log the user in immediately
             auth.login(result.token);
-            navigate('/dashboard'); // Redirect to the dashboard
+            navigate('/dashboard');
         } else {
             setError('Registration failed. This login might already be taken.');
         }

@@ -14,6 +14,8 @@ WORKDIR /app
 COPY --from=builder /app/target/CourseWork-1.0-SNAPSHOT.jar app.jar
 COPY .env .env
 
+EXPOSE 8080
+
 ENTRYPOINT ["sh", "-c", "\
   while ! timeout 1 bash -c 'echo > /dev/tcp/$DB_HOST/3306'; do \
     echo '⏳ Waiting for MySQL...'; sleep 2; \

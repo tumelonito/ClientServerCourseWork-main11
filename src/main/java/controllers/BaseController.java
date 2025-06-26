@@ -19,6 +19,7 @@ public abstract class BaseController implements HttpHandler {
         httpExchange.getResponseHeaders().add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Token");
         httpExchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         httpExchange.getResponseHeaders().add("Access-Control-Allow-Credentials", "true");
+        httpExchange.getResponseHeaders().add("Access-Control-Expose-Headers", "Token");
 
         if (httpExchange.getRequestMethod().equalsIgnoreCase("OPTIONS")) {
             httpExchange.sendResponseHeaders(HttpURLConnection.HTTP_NO_CONTENT, -1);

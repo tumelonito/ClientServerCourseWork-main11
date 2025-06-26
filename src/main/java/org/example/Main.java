@@ -12,7 +12,7 @@ import java.net.InetSocketAddress;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 8080), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(InetAddress.getLocalHost(), 8080), 0);
 
         server.createContext("/login", new LoginHandler());
         server.createContext("/api/accounts", new AccountController());

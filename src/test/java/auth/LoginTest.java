@@ -31,7 +31,6 @@ class LoginTest extends BaseIntegrationTest {
         LoginRequest request = new LoginRequest(uniqueLogin, "strong_password");
 
         boolean wasSuccessful = loginService.signUp(request);
-
         assertThat(wasSuccessful).isTrue();
     }
 

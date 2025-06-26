@@ -3,7 +3,7 @@ import { apiClient } from './apiClient';
 export const loginUser = async (login, password) => {
     try {
         const response = await apiClient.post('/login', { login, password });
-        const token = response.headers['token'];
+        const token = response.headers['token']; // lowercase
         return { success: true, token };
     } catch (error) {
         console.error('Login failed:', error);

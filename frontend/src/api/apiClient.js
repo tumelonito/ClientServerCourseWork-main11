@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 export const apiClient = axios.create({
-    baseURL: 'http://localhost:8080', // Your Java server URL
+    baseURL: 'http://localhost:8080',
 });
 
-// Interceptor to automatically add the auth token to every request
 apiClient.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('authToken');
