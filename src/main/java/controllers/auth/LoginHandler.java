@@ -23,7 +23,7 @@ public class LoginHandler extends BaseController {
         try {
             LoginRequest loginRequest = mapper.readValue(exchange.getRequestBody(), LoginRequest.class);
             if (!service.signIn(loginRequest)) {
-                exchange.sendResponseHeaders(200, 0);
+                exchange.sendResponseHeaders(403, 0);
                 exchange.close();
                 return;
             }
